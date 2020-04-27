@@ -4,6 +4,7 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { PostsComponent } from './modules/posts/posts.component';
 import { ToolsComponent } from './modules/tools/tools.component';
+import { NotfoundComponent } from './modules/notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -20,8 +21,10 @@ const routes: Routes = [
       {
         path: 'tools',
         component: ToolsComponent
-      }
+      },
+      { path: '**', component: NotfoundComponent}
     ],
+    
   },
 ];
 
