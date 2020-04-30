@@ -6,11 +6,10 @@ import { WebSocketService } from './web-socket.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnInit{
-  title = 'dashboard';
-
+export class AppComponent implements OnInit {
   
-
+  title = 'dashboard';
+  
   constructor(private websocketService: WebSocketService){}
 
   ngOnInit(){

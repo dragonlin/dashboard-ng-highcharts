@@ -14,6 +14,7 @@ import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { ToolsComponent } from 'src/app/modules/tools/tools.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotfoundComponent } from 'src/app/modules/notfound/notfound.component';
+import { CoopComponent } from 'src/app/modules/coop/coop.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { NotfoundComponent } from 'src/app/modules/notfound/notfound.component';
     DashboardComponent,
     PostsComponent,
     ToolsComponent,
+    CoopComponent,
     NotfoundComponent
   ],
   imports: [

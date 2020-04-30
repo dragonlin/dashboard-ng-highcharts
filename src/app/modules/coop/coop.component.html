@@ -1,0 +1,17 @@
+<svg 
+	[attr.width]="container.w" 
+	[attr.height]="container.h">
+
+	<text *ngIf="!clicked" x="20" y="35">Click to make circles</text>
+
+	<circle 
+		*ngFor="let circle of circles"
+		[attr.stroke]="circle.stroke"
+		[attr.cx]="circle.point.x"
+		[attr.cy]="circle.point.y"
+		[attr.r]="circle.radius" 
+		[attr.fill]="circle.fill" (click)="addCircle()" />
+	<rect x="300" y="150" width="200" height="300" stroke="blue" fill="transparent" stroke-width="2"/>
+	<text x="400" y="300"> long </text>
+    
+</svg>
