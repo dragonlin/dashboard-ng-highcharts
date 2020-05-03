@@ -4,7 +4,8 @@ import { DefaultComponent } from './default.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule, MatDividerModule, MatSlideToggleModule, MatCardModule, 
-  MatFormFieldModule, MatCheckboxModule, MatInputModule, MatButtonModule, MatProgressSpinnerModule, MatTableModule
+  MatFormFieldModule, MatCheckboxModule, MatInputModule, MatButtonModule, 
+  MatProgressSpinnerModule, MatTableModule, MatListModule
 } from '@angular/material'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
@@ -40,7 +41,8 @@ import { NotfoundComponent } from 'src/app/modules/notfound/notfound.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatListModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}

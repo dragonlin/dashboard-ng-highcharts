@@ -2,6 +2,7 @@ import { Component, OnInit, SimpleChanges, Input, OnChanges, EventEmitter, Outpu
 import { ThemePalette } from "@angular/material/core";
 import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
 import { WebSocketService } from "src/app/web-socket.service";
+import {animate, state, style, transition, trigger} from '@angular/animations';
 // import { MatCheckboxChange } from '@angular/material';
 
 //                  ___====-_  _-====___
@@ -58,12 +59,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: "app-tools",
   templateUrl: "./tools.component.html",
   styleUrls: ["./tools.component.less"],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class ToolsComponent implements OnInit {
   color: ThemePalette = "accent";
   // checked = false;
   // disabled = false;
-  displayedColumns: string[] = ['domain', 'rangeFrom', 'rangeTo', 'commit_nums', 'commits'];
+  displayedColumns: string[] = ['domain', 'rangeFrom', 'rangeTo', 'commit_nums'];
   dataSource = ELEMENT_DATA;
   author_filter: boolean = false;
   total_commits: number = 0;
@@ -72,12 +80,13 @@ export class ToolsComponent implements OnInit {
   webService: WebSocketService;
   filterControl: FormControl = new FormControl(true)
   result: any = {};
+  expandedElement: PeriodicElement | null;
 
   constructor(private fb: FormBuilder, webService: WebSocketService) {
     this.compares = this.fb.group(
       {
-        compare_from: ["34817", Validators.required],
-        compare_to: ["new", Validators.required],
+        compare_from: ["35730", Validators.required],
+        compare_to: ["35736", Validators.required],
 
       },
       // {
